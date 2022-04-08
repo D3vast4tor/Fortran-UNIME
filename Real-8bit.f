@@ -1,7 +1,7 @@
         SUBROUTINE machine_precision()
             REAL*8 :: f = 1,n = 1
             !Inizializzazione delle variabili a doppia precisione
-            !Vengo numeri interessanti con la dicitura REAL(KIND = 8)
+            !Vengo numeri interessanti con la dicitura REAL*16
             !Più stress sulla CPU
             DO
             !Non ho idea di come fermarlo prima che dica infinity
