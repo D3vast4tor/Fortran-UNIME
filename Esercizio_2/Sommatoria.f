@@ -14,8 +14,7 @@
             end function
 
         
-        PROGRAM Esercizio1
+        PROGRAM Esercizio_2
             integer :: sum
             sum =  sommatoria()
-            write(*,*) sum
         END
