@@ -1,12 +1,21 @@
-        program prova
-            INTEGER,PARAMETER :: n = 2
-            INTEGER,DIMENSION(n,n) :: d,a,b
-            DATA a/3,3,6,7/
-            DATA b/2,8,7,1/
+        program Product
+            INTEGER,PARAMETER :: n = 3
+            INTEGER,DIMENSION(n,n) :: a,b,d
             INTEGER :: i,j,k,formato
             ASSIGN 1 TO formato
-    1       FORMAT(2(3x,i2))!formato 2x2
+    1       FORMAT(3(3x,i3))!formato 2x2
             !Somma tra matrici
+            do i = 1,n
+                do j = 1,n
+                    READ(*,*)a(i,j)
+                enddo
+            enddo
+            WRITE(*,*)'Inserire i numeri nella seconda matrice: '
+            do i = 1,n
+                do j = 1,n
+                    READ(*,*)b(i,j)
+                enddo
+            enddo
             do l = 1,n
                 do j = 1,n
                     d(l,j) = 0
@@ -21,4 +30,3 @@
             write(*,*)'----------------------------'
             write(*,1)d
         end
-        !c(i,j) = ( c(i,j)+a(i,k) ) * b(k,j)
