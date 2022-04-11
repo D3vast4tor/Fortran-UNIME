@@ -1,3 +1,10 @@
+        !
+        !IL PROGRAMMA NON RITORNA LA MOLTIPLICAZIONE TRA MATRICI
+        !
+        !QUELLA CHE DOVREBBE ESSERE IL PRODOTTO TRA MATRICI IN REALTA' E' SBAGLIATA.
+        !
+        !
+        !
         program Product
             INTEGER,PARAMETER :: n = 3
             INTEGER,DIMENSION(n,n) :: a,b,d
