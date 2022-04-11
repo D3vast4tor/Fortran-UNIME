@@ -1,26 +1,29 @@
-        SUBROUTINE Quadruple_precision()
-            REAL*16 :: f = 1,n = 1
-            DO
-                n = n + 0.0000001
-                f = ( f * n )
-                WRITE(*,*)'Fattore di n: ',f
-            END DO
-        END SUBROUTINE
-        SUBROUTINE Double_precision()
-            REAL*8 :: f = 1,n = 1
+!        SUBROUTINE Quadruple_precision()
+!            REAL*16 :: f,n
+!            f = 1
+!            n = 1
+!            DO
+!                n = (n + 0.0000000000001)
+!                f = ( f * n )
+!                WRITE(*,*)'Fattore di n: ',f
+!            END DO
+!        END SUBROUTINE
+!        SUBROUTINE Double_precision()
+!            REAL*8 :: f = 1,n = 1
             !Inizializzazione delle variabili a doppia precisione
             !Vengo numeri interessanti con la dicitura REAL*16
             !Più stress sulla CPU
-            DO
+!            DO
             !Non ho idea di come fermarlo prima che dica infinity
             !Ciclo infinito, servirebbe un'istruzione di controllo per fare uscire la subroutine dal ciclo
             !Cercare di creare un loop infinito con un DO n = 1,-1,1 viene impedito dal compilatore
             !Non si possono fare salti posizionali in una subroutine, sono alla terza tazza di caffè,addio
-                n = n + 0.000000001
-                f = ( f * n )
-                WRITE(*,*)'Fattore di n: ',f
-            END DO
-        END SUBROUTINE
+!                n = n + 0.000000001
+!                f = ( f * n )
+!                WRITE(*,*)'Fattore di n: ',f
+!            END DO
+!        END SUBROUTINE
+        
         PROGRAM Factorial
             CHARACTER d,q,e,choise
             d = 'd'
@@ -33,11 +36,12 @@
             WRITE(*,*)'Inserire la scelta: '
             READ(*,*)choise
             IF(choise == d)THEN
-                CALL Double_precision()
+!                CALL Double_precision()
             END IF
             GOTO 1
             IF(choise == q)THEN
-                CALL Quadruple_precision()
+                WRITE(*,*)r()
+!                CALL Quadruple_precision()
             END IF
             GOTO 1
             IF(choise == e)THEN
