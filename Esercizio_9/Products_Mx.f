@@ -8,7 +8,7 @@
             ASSIGN 1 TO format2x2
             ASSIGN 2 TO format3x3
             ASSIGN 3 TO dim_error
-    1       FORMAT(2(3x,i2))!formato 2x2
+    1       FORMAT(2(2x,i4))!formato 2x2
     2       FORMAT(3(3x,i4))!formato 3x3
             !Non so come creare un if che decide in automatico il formato basato sulle dimensione della matrice, nel dubbio li metto coi salti condizionali per ora.
     3       WRITE(*,*)'Inserire il numero di righe: '
@@ -22,15 +22,11 @@
                 ALLOCATE(a(r,r),b(r,r),c(r,r))
                 WRITE(*,*)'Inserire i numeri della prima matrice: '
                 DO l = 1,r
-                    DO j = 1,col
-                        READ(*,*)a(l,j)
-                    ENDDO
+                    READ(*,*)(a(l,j), j = 1, col)
                 ENDDO
                 WRITE(*,*)'Inserire i numeri nella seconda matrice: '
                 DO l = 1,r
-                    DO j = 1,col
-                        READ(*,*)b(l,j)
-                    ENDDO
+                    READ(*,*)(b(l,j), j =1, col)
                 ENDDO
                 DO l = 1,r
                     DO j = 1,col 
@@ -38,6 +34,7 @@
                     ENDDO
                 ENDDO
             ELSE
+                WRITE(*,*)
                 GOTO 3
             ENDIF
             DO l = 1,r
